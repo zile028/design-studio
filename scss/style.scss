@@ -1,0 +1,250 @@
+@import "starter";
+@import "mixins";
+
+// navigation
+nav {
+    background-color: $primary;
+    padding: 5px 5%;
+    @include flex(space-between, center);
+    color: $white;
+    .logo {
+        font-size: 2rem;
+        font-family: $fontHadeings;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    ul {
+        @include flex(flex-end, center);
+        li {
+            margin-left: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+// index header
+.indexHeader {
+    background-image: url(../img/header.jpg);
+    @include bgBasic;
+    @include flex(flex-end, center, column);
+    height: 75vh;
+    position: relative;
+    hgroup {
+        @include flex(center, center, column);
+        background-color: $primary;
+        width: 50%;
+        height: 195px;
+        transform: translateY(50%);
+        position: relative;
+
+        color: $white;
+        text-align: center;
+        // margin: 0 auto;
+        // padding: 30px;
+        h1 {
+            color: $secondary;
+            font-size: 8rem;
+            letter-spacing: 2px;
+            line-height: 1;
+            text-shadow: 3px 3px 0 darken($primary, 20%);
+            position: absolute;
+            top: 0;
+            transform: translateY(-50%);
+        }
+        h3 {
+            line-height: 1;
+            color: $white;
+            margin: 20px 0;
+            font-size: 2.7rem;
+        }
+        p {
+            font-weight: 700;
+            font-size: 1.3rem;
+            font-style: italic;
+            position: absolute;
+            bottom: 30px;
+        }
+    }
+}
+.otherHeader {
+    background-color: $secondary;
+    text-align: center;
+    padding: 10px 0;
+    h1 {
+        font-family: $fontFamily;
+        text-shadow: 1px 1px 0 $white;
+        color: $primary;
+        font-size: 2rem;
+        span {
+            margin-left: 10px;
+            padding-left: 10px;
+            border-left: 3px solid $primary;
+        }
+    }
+    h3 {
+        font-size: 1.3rem;
+    }
+}
+.services {
+    padding: 185px 0 105px;
+    article {
+        &:first-child {
+            p {
+                font-weight: 700;
+            }
+        }
+        &:last-child {
+            @include flex(space-between, flex-start);
+            height: 450px;
+            margin-top: 30px;
+            div {
+                background-color: lightseagreen;
+                padding: 30px;
+                flex: 0 0 30%;
+                i {
+                    font-size: 2.2rem;
+                }
+                h3 {
+                    margin: 20px 0;
+                }
+                p {
+                    font-weight: 700;
+                }
+                a {
+                    font-weight: 700;
+                    display: inline-block;
+                    margin: 20px 0 0 0;
+                }
+                &:nth-child(1) {
+                    background-color: $primary;
+                    color: $white;
+                    h3 {
+                        color: $white;
+                    }
+                }
+                &:nth-child(2) {
+                    background-color: $secondary;
+                    align-self: center;
+                }
+                &:nth-child(3) {
+                    background-color: $white;
+                    align-self: flex-end;
+                }
+            }
+        }
+    }
+}
+// team
+.team {
+    @include flex(space-between, center);
+    padding: $padding;
+    article {
+        flex: 0 0 48%;
+        &:first-child {
+            @include flex(center, flex-start, column);
+            p {
+                margin-top: 20px;
+            }
+            button {
+                @include btn($primary, $secondary);
+                margin-top: 40px;
+            }
+        }
+        &:last-child {
+            @include flex(space-between, center);
+            .wraper {
+                flex: 0 0 44%;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-bottom: 40px;
+                position: relative;
+                cursor: pointer;
+                &:hover {
+                    img {
+                        transform: rotateY(180deg);
+                        border-radius: 50%;
+                    }
+                    .backSide {
+                        transform: rotateY(0);
+                    }
+                }
+                img {
+                    backface-visibility: hidden;
+                    transition: all 1s ease;
+                }
+                .backSide {
+                    transition: all 1s ease;
+                    backface-visibility: hidden;
+                    position: absolute;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    transform: rotateY(180deg);
+                    p {
+                        position: absolute;
+                        color: $secondary;
+                        text-align: center;
+                        top: 50%;
+                        left: 50%;
+                        font-size: 2rem;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+    }
+}
+// project
+.project {
+    @extend .team;
+}
+// gallery
+.gallery {
+    background-color: $secondary;
+}
+// footer
+footer {
+    background-color: $primary;
+    padding: $padding;
+    article {
+        @include flex(space-between, flex-start);
+        color: $white;
+        font-weight: 700;
+        h4 {
+            color: $white;
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+        }
+        i {
+            color: $secondary;
+        }
+        div {
+            &:nth-child(1) {
+                flex: 0 0 65%;
+            }
+            &:nth-child(2) {
+                flex: 0 0 16%;
+                i {
+                    margin-right: 5px;
+                }
+            }
+            &:nth-child(3) {
+                flex: 0 0 16%;
+                i {
+                    font-size: 2rem;
+                    margin-left: 10px;
+                    &:first-child {
+                        margin-left: 0px;
+                    }
+                }
+            }
+        }
+    }
+}

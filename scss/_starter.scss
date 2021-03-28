@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Lato:wght@300;400;700&display=swap");
+
+// VARIABLE
+$fontFamily: "Lato", sans-serif;
+$fontHadeings: "Anton", sans-serif;
+$fontSize: 16px;
+$primary: #8f71bf;
+$secondary: #f3cc30;
+$white: #fff;
+$lightGray: #fdf9f6;
+$transition: 0.4s ease;
+$padding: 70px 0;
+
+// RESET STYLE
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// BASIC STYLE
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    font-size: 16px;
+    line-height: 1.7;
+    background: $lightGray;
+    color: darken($primary, 20%);
+}
+
+h1 {
+    font-family: $fontHadeings;
+}
+h2 {
+    font-size: 3rem;
+    padding-bottom: 25px;
+    &::after {
+        content: "";
+        display: block;
+        width: 45px;
+        height: 3px;
+        background-color: $primary;
+    }
+}
+h2,
+h3,
+h4,
+h5 {
+    color: $primary;
+    font-family: $fontFamily;
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    width: 100%;
+    display: block;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+    @media (max-width: 767px) {
+        width: 90%;
+    }
+}

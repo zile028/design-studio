@@ -1,4 +1,6 @@
 $(".owl-carousel").owlCarousel({
+  autoplay: true,
+  autoplayTimeout: 2000,
   loop: true,
   margin: 0,
   nav: true,
